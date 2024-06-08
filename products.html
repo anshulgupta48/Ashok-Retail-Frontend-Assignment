@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Our Products - Jaipur Masale</title>
+    <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+		integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        /* Product grid styles */
+        .product-grid {
+            display: none;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 20px;
+            justify-items: center;
+            /* Align items horizontally */
+            text-align: center;
+            /* Align text center */
+        }
+
+        .product {
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            height: 200px;
+            width: 200px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: 0.25s ease;
+        }
+
+        .product:hover {
+            border: 1px solid rgb(87, 87, 236);
+        }
+
+        .product a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .product img {
+            height: 100px !important;
+            width: 150px !important;
+            height: auto;
+            display: block;
+        }
+
+        .product h2,
+        .product p {
+            margin: 10px 0;
+        }
+
+        /* Category styles */
+        .category-buttons {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .category-buttons button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            background-color: #f4f4f4;
+            font-size: 16px;
+            transition: all 0.3s linear;
+        }
+
+        .category-buttons button:hover,
+        .category-buttons button.active {
+            background-color: #f4b323;
+            border: 1px solid transparent;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+            background: white;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-slider {
+            display: flex;
+            overflow: hidden;
+            justify-content: center;
+            /* Align slides horizontally */
+        }
+
+        .modal-slide {
+            min-width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .modal-slide img {
+            width: 100%;
+        }
+
+        .dots {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        #menu {
+            margin-top: 0px !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .content {
+            padding-bottom: 0px !important;
+        }
+
+        .category-buttons {
+            margin-top: 0px !important;
+        }
+
+        .category-buttons button {
+            background-color: #ffffff;
+            border: 1px solid #9f4103;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        h2 {
+            color: #454754 !important;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="go_to_top">
+        <div class="gradient">
+            <div class="container">
+                <h2 id="logo"><a href="index.html">Jaipur Masale</a></h2>
+                <nav>
+                    <a href="index.html" class="menu_link">Welcome</a>
+                    <!-- <a href="about.html" class="menu_link">About</a> -->
+                    <a href="products.html" class="menu_link active">Our Products</a>
+                    <!-- <a href="contact.html" class="menu_link">Contact</a> -->
+                    <!-- <a href="bulk_query.html" class="menu_link active">Bulk Query</a> -->
+                    <a href="whatsapp-order.html" class="menu_link">Place orders</a>
+                    <a href="https://www.amazon.in/s?i=merchant-items&me=A1WKMM93O0PJNV&marketplaceID=A21TJRUUN4KGV&qid=1667064991&ref=sr_pg_1"
+                        target="_blank"> Amazon Store </a>
+                    <a href="export.html" class="menu_link">Export</a>
+                    <a href="blogs.html" class="menu_link">Our Blogs</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="menu" class="breakpoint">
+            <div class="content" data-aos="fade-up">
+                <h1 class="highlight">Discover</h1>
+                <h1 class="topic">our products</h1>
+            </div>
+
+            <!-- Category Buttons -->
+            <div class="category-buttons" data-aos="fade-down">
+                <button data-category="category1">Khada Masala</button>
+                <button data-category="category2">Powdered Masala</button>
+                <!-- Add more category buttons as needed -->
+            </div>
+
+            <!-- Category 1 Products -->
+            <div id="category1" class="product-grid">
+                <div class="product" data-product="1" data-aos="fade-up">
+                    <a href="products1.html?id=1"> <!-- Add the href attribute here -->
+                        <img src="./assets/img/sabut-haldi.jpeg" alt="Product 1">
+                        <h2>Turmeric Sticks/ Sabut Haldi</h2>
+                        <!-- <p>Product 1 Description</p> -->
+                    </a>
+                </div>
+                <!-- Add more products as needed -->
+                <div class="product" data-product="2" data-aos="fade-up">
+                    <a href="products1.html?id=2"> <!-- Add the href attribute here -->
+                        <img src="./assets/img/clove.avif" alt="Product 1">
+                        <h2>Organic Clove Whole</h2>
+                        <!-- <p>Product 1 Description</p> -->
+                    </a>
+                </div>
+                <div class="product" data-product="1" data-aos="fade-up">
+                    <img src="./assets/img/cumin.webp" alt="Product 1">
+                    <h2>Organic Whole Cumin Seeds/ Jeera</h2>
+                    <!-- <p>Product 1 Description</p> -->
+                </div>
+                <div class="product" data-product="1" data-aos="fade-up">
+                    <img src="./assets/img/kachri1.jpg" alt="Product 1">
+                    <h2>Dry Sabut Kachri</h2>
+                    <!-- <p>Product 1 Description</p> -->
+                </div>
+                <div class="product" data-product="1" data-aos="fade-left">
+                    <img src="./assets/img/dryginger1.webp" alt="Product 1">
+                    <h2>Dry Ginger/ Sonth Sabut</h2>
+                    <!-- <p>Product 1 Description</p> -->
+                </div>
+                <div class="product" data-product="1" data-aos="fade-down">
+                    <img src="./assets/img/tezpatta.jpeg" alt="Product 1">
+                    <h2>Organic Tejpan Patta</h2>
+                    <!-- <p>Product 1 Description</p> -->
+                </div>
+                <div class="product" data-product="1" data-aos="fade-up">
+                    <img src="./assets/img/elaichi.webp" alt="Product 1">
+                    <h2>Whole Cardamom/ Elaichi</h2>
+                    <!-- <p>Product 1 Description</p> -->
+                </div>
+                <div class="product" data-product="1" data-aos="fade-right">
+                    <img src="./assets/img/kasuri1.jpeg" alt="Product 1">
+                    <h2>Kasuri Methi</h2>
+                    <!-- <p>Product 1 Description</p> -->
+                </div>
+                <div class="product" data-product="1" data-aos="fade-right">
+                    <img src="./assets/img/dalchini.jpeg" alt="Product 1">
+                    <h2>Organic Cinnamom Sticks/ Dalchini</h2>
+                    <!-- <p>Product 1 Description</p> -->
+                </div>
+                <div class="product" data-product="1" data-aos="fade-up">
+                    <img src="./assets/img/chilli2.jpeg" alt="Product 1">
+                    <h2>Lavangi Dandicut Red Chilli</h2>
+                    <!-- <p>Product 1 Description</p> -->
+                </div>
+            </div>
+
+            <!-- Category 2 Products -->
+            <div id="category2" class="product-grid" data-aos="fade-up">
+                <div class="product" data-product="2">
+                    <img src="./assets/img/product2_main.jpg" alt="Product 2">
+                    <h2>Product 2 Title</h2>
+                    <p>Product 2 Description</p>
+                </div>
+                <!-- Add more products as needed -->
+            </div>
+
+            <!-- Add more categories and their products as needed -->
+
+        </section>
+    </main>
+    <footer>
+        <!-- Footer content -->
+    </footer>
+
+    <!-- Modal for product images -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <div class="modal-slider">
+                <div class="modal-slide">
+                    <img src="./assets/img/product1_1.jpg" alt="Product Image 1">
+                </div>
+                <div class="modal-slide">
+                    <img src="./assets/img/product1_2.jpg" alt="Product Image 2">
+                </div>
+                <div class="modal-slide">
+                    <img src="./assets/img/product1_3.jpg" alt="Product Image 3">
+                </div>
+                <!-- Add more slides as needed -->
+            </div>
+            <div class="dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <!-- Add more dots as needed -->
+            </div>
+        </div>
+    </div>
+
+    <script src="//code.tidio.co/prugbdb0m4osjyy13krhnpjnressdkn5.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+		integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        AOS.init({
+			duration: 1200,
+		});
+
+
+        // JavaScript for category navigation and modal
+        const categoryButtons = document.querySelectorAll('.category-buttons button');
+        const productGrids = document.querySelectorAll('.product-grid');
+        const modal = document.getElementById('myModal');
+        const slides = document.querySelectorAll('.modal-slide');
+        const dots = document.querySelectorAll('.dot');
+        const products = document.querySelectorAll('.product');
+        const closeModal = document.querySelector('.close');
+        let currentSlide = 0;
+
+        // Hide all product grids initially
+        productGrids.forEach(grid => grid.style.display = 'none');
+
+        // Show the products for the clicked category
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const category = button.getAttribute('data-category');
+                productGrids.forEach(grid => {
+                    if (grid.id === category) {
+                        grid.style.display = 'grid';
+                    } else {
+                        grid.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // JavaScript for modal and slider
+        products.forEach((product, index) => {
+            product.addEventListener('click', () => {
+                modal.style.display = 'block';
+                showSlide(index);
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        function showSlide(index) {
+            if (index >= slides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+
+            const offset = -currentSlide * 100;
+            document.querySelector('.modal-slider').style.transform = 'translateX(' + offset + '%)';
+
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+
+        // Auto slide functionality (optional)
+        setInterval(() => {
+            if (modal.style.display === 'block') {
+                showSlide(currentSlide + 1);
+            }
+        }, 3000);
+
+        // Programmatically click on Category 1 button by default
+        categoryButtons[0].click(); // Assuming Category 1 button is the first button
+    </script>
+</body>
+
+</html>

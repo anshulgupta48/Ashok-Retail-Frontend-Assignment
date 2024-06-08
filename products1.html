@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product 1 - Jaipur Masale</title>
+    <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        .product-detail {
+            padding: 20px;
+        }
+
+        .product-detail img {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .product-detail h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .product-detail p {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .image-gallery img {
+            width: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header id="go_to_top">
+        <div class="gradient">
+            <div class="container">
+                <h2 id="logo"><a href="index.html">Jaipur Masale</a></h2>
+                <nav>
+                    <a href="index.html" class="menu_link">Welcome</a>
+                    <!-- <a href="about.html" class="menu_link">About</a> -->
+                    <a href="products.html" class="menu_link active">Our Products</a>
+                    <!-- <a href="contact.html" class="menu_link">Contact</a> -->
+                    <!-- <a href="bulk_query.html" class="menu_link active">Bulk Query</a> -->
+                    <a href="whatsapp-order.html" class="menu_link">Place orders</a>
+                    <a href="https://www.amazon.in/s?i=merchant-items&me=A1WKMM93O0PJNV&marketplaceID=A21TJRUUN4KGV&qid=1667064991&ref=sr_pg_1" target="_blank"> Amazon Store </a>
+                    <a href="export.html" class="menu_link">Export</a>
+                    <a href="blogs.html" class="menu_link">Our Blogs</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="product-detail">
+            <img src="./assets/img/product1_main.jpg" alt="Product 1 Main Image">
+            <h1>Product 1 Title</h1>
+            <p>Product 1 detailed description goes here...</p>
+
+            <div class="image-gallery">
+                <img src="./assets/img/product1_1.jpg" alt="Product 1 Image 1" onclick="showImage(this)">
+                <img src="./assets/img/product1_2.jpg" alt="Product 1 Image 2" onclick="showImage(this)">
+                <img src="./assets/img/product1_3.jpg" alt="Product 1 Image 3" onclick="showImage(this)">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- Footer content -->
+    </footer>
+
+    <script>
+        function showImage(element) {
+            const mainImage = document.querySelector('.product-detail img');
+            mainImage.src = element.src;
+        }
+    </script>
+    <script src="//code.tidio.co/prugbdb0m4osjyy13krhnpjnressdkn5.js" async></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bulk Query - Jaipur Masale</title>
+    <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            padding: 20px 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        #logo {
+            font-family: 'Allura', cursive;
+            font-size: 36px;
+            color: #fff;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        nav a.active, nav a:hover {
+            color: #ffd700;
+        }
+        .icon-img {
+            width: 30px;
+            height: auto;
+        }
+        main {
+            padding: 40px 20px;
+        }
+        #bulk-query {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            color: #ff7e5f;
+            margin-bottom: 30px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: 700;
+        }
+        form input, form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        form textarea {
+            resize: vertical;
+        }
+        form button {
+            width: 100%;
+            padding: 15px;
+            background-color: #ff7e5f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        form button:hover {
+            background-color: #feb47b;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header id="go_to_top">
+        <div class="container">
+            <h2 id="logo"><a href="index.html">Jaipur Masale</a></h2>
+            <nav>
+                <a href="index.html" class="menu_link">Welcome</a>
+                <!-- <a href="about.html" class="menu_link">About</a> -->
+                <a href="products.html" class="menu_link">Our Products</a>
+                <!-- <a href="contact.html" class="menu_link">Contact</a> -->
+                <!-- <a href="bulk_query.html" class="menu_link active">Bulk Query</a> -->
+                <a href="whatsapp-order.html" class="menu_link">Place Orders</a>
+                <a href="https://www.amazon.in/s?i=merchant-items&me=A1WKMM93O0PJNV&marketplaceID=A21TJRUUN4KGV&qid=1667064991&ref=sr_pg_1" target="_blank">
+                    <img class="icon-img" src="./assets/img/amazon-icon.png" alt="Amazon">
+                </a>
+                <a href="export.html" class="menu_link active">Export</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="bulk-query">
+            <h2>Bulk Query</h2>
+            <form id="bulkQueryForm" action="http://localhost:3000/bulk-query" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" required>
+                <label for="query">Query:</label>
+                <textarea id="query" name="query" rows="4" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Jaipur Masale. All rights reserved.
+    </footer>
+    <script src="./assets/js/scripts.js"></script>
+    <script src="//code.tidio.co/prugbdb0m4osjyy13krhnpjnressdkn5.js" async></script>
+</body>
+</html>

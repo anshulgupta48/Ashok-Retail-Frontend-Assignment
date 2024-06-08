@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Our Products - Jaipur Masale</title>
+    <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        /* Product grid styles */
+        .product-grid {
+            display: none;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product h2,
+        .product p {
+            margin: 10px 0;
+        }
+
+        /* Category styles */
+        .category-buttons {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .category-buttons button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            background-color: #f4f4f4;
+            font-size: 16px;
+        }
+
+        .category-buttons button.active {
+            background-color: #ccc;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+            background: white;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-slider {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .modal-slide {
+            min-width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .modal-slide img {
+            width: 100%;
+        }
+
+        .dots {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* Centering content */
+        #blogs {
+            min-height: 100vh;
+            font-size: 24px;
+            padding: 20px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 30px;
+        }
+
+        .blog-post {
+            height: 350px;
+            width: 300px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: 0.25s ease;
+        }
+
+        .blog-post:hover {
+            border: 1px solid rgb(87, 87, 236);
+        }
+
+        .blog-post a {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .blog-post img {
+            min-width: 0px;
+            height: 150px;
+            border-radius: 5px;
+        }
+
+        .blog-post-content {
+            flex-grow: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .blog-post-content h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .blog-post-content p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        footer {
+            padding: 20px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="go_to_top">
+        <div class="gradient">
+            <div class="container">
+                <h2 id="logo"><a href="index.html">Jaipur Masale</a></h2>
+                <nav>
+                    <a href="index.html" class="menu_link">Welcome</a>
+                    <!-- <a href="about.html" class="menu_link">About</a> -->
+                    <a href="products.html" class="menu_link">Our Products</a>
+                    <!-- <a href="contact.html" class="menu_link">Contact</a> -->
+                    <!-- <a href="bulk_query.html" class="menu_link active">Bulk Query</a> -->
+                    <a href="whatsapp-order.html" class="menu_link">Place orders</a>
+                    <a href="https://www.amazon.in/s?i=merchant-items&me=A1WKMM93O0PJNV&marketplaceID=A21TJRUUN4KGV&qid=1667064991&ref=sr_pg_1"
+                        target="_blank"> Amazon Store </a>
+                    <a href="export.html" class="menu_link">Export</a>
+                    <a href="blogs.html" class="menu_link active">Our Blogs</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="blogs" class="breakpoint">
+            <h1 style="text-align: center; font-size: 36px; margin-top: 20px; margin-bottom: 20px;">Our Blogs</h1>
+            <div class="content">
+                <div class="blog-post">
+                    <a href="blog1.html" style="display: flex; text-decoration: none; color: inherit;">
+                        <img src="./assets/img/sabut-haldi.jpeg" alt="Blog Image 1">
+                        <div class="blog-post-content">
+                            <h2>Organic Haldi Sticks</h2>
+                            <!-- <p>Published on: January 1, 2024</p> -->
+                        </div>
+                    </a>
+                </div>
+                <div class="blog-post">
+                    <a href="blog2.html" style="display: flex; text-decoration: none; color: inherit;">
+                        <img src="./assets/img/tezpatta.jpeg" alt="Blog Image 2">
+                        <div class="blog-post-content">
+                            <h2>Organic Tejpan Patta</h2>
+                            <!-- <p>Published on: February 1, 2024</p> -->
+                        </div>
+                    </a>
+                </div>
+                <div class="blog-post">
+                    <a href="blog3.html" style="display: flex; text-decoration: none; color: inherit;">
+                        <img src="./assets/img/dalchini.jpeg" alt="Blog Image 2">
+                        <div class="blog-post-content">
+                            <h2>Organic Cinnamom Sticks/ Dalchini</h2>
+                            <!-- <p>Published on: March 1, 2024</p> -->
+                        </div>
+                    </a>
+                </div>
+                <!-- Add more blog posts here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <!-- Footer content -->
+        &copy; 2024 Jaipur Masale. All rights reserved.
+    </footer>
+    <script src="//code.tidio.co/prugbdb0m4osjyy13krhnpjnressdkn5.js" async></script>
+</body>
+
+</html>

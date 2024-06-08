@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Our Products - Jaipur Masale</title>
+    <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        /* Product grid styles */
+        .product-grid {
+            display: none;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product h2,
+        .product p {
+            margin: 10px 0;
+        }
+
+        /* Category styles */
+        .category-buttons {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .category-buttons button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            background-color: #f4f4f4;
+            font-size: 16px;
+        }
+
+        .category-buttons button.active {
+            background-color: #ccc;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+            background: white;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-slider {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .modal-slide {
+            min-width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .modal-slide img {
+            width: 100%;
+        }
+
+        .dots {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* Centering content */
+        #export {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 70px);
+            text-align: center;
+        }
+
+        .content {
+            max-width: 600px;
+            padding: 50px;
+            background: #f9f9f9;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        footer {
+            padding: 20px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="go_to_top">
+        <div class="gradient">
+            <div class="container">
+                <h2 id="logo"><a href="index.html">Jaipur Masale</a></h2>
+                <nav>
+                    <a href="index.html" class="menu_link">Welcome</a>
+                    <!-- <a href="about.html" class="menu_link">About</a> -->
+                    <a href="products.html" class="menu_link">Our Products</a>
+                    <!-- <a href="contact.html" class="menu_link">Contact</a> -->
+                    <!-- <a href="bulk_query.html" class="menu_link active">Bulk Query</a> -->
+                    <a href="whatsapp-order.html" class="menu_link">Place orders</a>
+                    <a href="https://www.amazon.in/s?i=merchant-items&me=A1WKMM93O0PJNV&marketplaceID=A21TJRUUN4KGV&qid=1667064991&ref=sr_pg_1"
+                        target="_blank"> Amazon Store </a>
+                    <a href="export.html" class="menu_link active">Export</a>
+                    <a href="blogs.html" class="menu_link">Our Blogs</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="export" class="breakpoint">
+            <div class="content">
+                <h1>Coming Soon</h1>
+                <p>If you have any query, please reach out to me at <strong>9******</strong></p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <!-- Footer content -->
+        &copy; 2024 Jaipur Masale. All rights reserved.
+    </footer>
+    <script src="//code.tidio.co/prugbdb0m4osjyy13krhnpjnressdkn5.js" async></script>
+</body>
+
+</html>
